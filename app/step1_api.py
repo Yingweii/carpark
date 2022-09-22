@@ -5,10 +5,10 @@ import requests, datetime, time, json
 ## require specific header as as api parameters ##
 
 url = "http://datamall2.mytransport.sg/ltaodataservice/CarParkAvailabilityv2"
-headers = {"AccountKey": " ",
-           "accept": "application/json"}
-#headers = {"AccountKey": st.secrets["LTA_APIKEY"],
+#headers = {"AccountKey": " ",
 #           "accept": "application/json"}
+headers = {"AccountKey": st.secrets["LTA_APIKEY"],
+           "accept": "application/json"}
 response = requests.request(method="get", url=url, headers=headers)
 lta_data = response.json()
 
